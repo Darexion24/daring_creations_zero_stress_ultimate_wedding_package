@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daring Creations | The Zero-Stress Ultimate Wedding Package</title>
+    
+    <!-- Simple 'DC' SVG Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23111111'/%3E%3Ctext x='50' y='68' font-family='Georgia, serif' font-size='50' font-weight='bold' fill='white' text-anchor='middle'%3EDC%3C/text%3E%3C/svg%3E">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables */
+        :root {
+            --bg-color: #FAFAFA;
+            --text-main: #111111;
+            --text-muted: #444444;
+            --accent-pink: #C30C6D;
+            --accent-purple: #B629F2;
+            --accent-orange: #F24405;
+            --gradient-accent: linear-gradient(135deg, var(--accent-pink), var(--accent-purple), var(--accent-orange));
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Container designed for screen & PDF */
+        .sales-sheet {
+            width: 100%;
+            max-width: 900px;
+            background: #FFFFFF;
+            margin: 40px auto;
+            padding: 60px 80px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .brand-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .brand-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--gradient-accent);
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* Intro Section */
+        .intro {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        .intro strong {
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        /* Package Details */
+        .package-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .deliverable-item {
+            background: #FAFAFA;
+            padding: 25px;
+            border-left: 4px solid var(--accent-purple);
+        }
+
+        .deliverable-item h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .deliverable-item p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Dream Outcome & Bonus */
+        .outcome-bonus-container {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            flex: 1;
+            padding: 30px;
+            background: #FAFAFA;
+            border: 1px solid #EAEAEA;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Guarantee Box */
+        .guarantee-box {
+            position: relative;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 50px;
+            background: #111111;
+            color: #FFFFFF;
+        }
+
+        .guarantee-box::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: var(--gradient-accent);
+            z-index: -1;
+        }
+
+        .guarantee-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #FFFFFF;
+        }
+
+        .guarantee-box p {
+            font-size: 1.1rem;
+            font-style: italic;
+            font-family: 'Cinzel', serif;
+            line-height: 1.8;
+        }
+
+        /* Investment & CTA */
+        .investment-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .deposit-note {
+            font-size: 1rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 20px 45px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #FFFFFF;
+            background: var(--gradient-accent);
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(195, 12, 109, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #EAEAEA;
+        }
+
+        .print-btn {
+            background: none;
+            border: 1px solid var(--text-muted);
+            padding: 10px 25px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: all 0.3s ease;
+        }
+
+        .print-btn:hover {
+            background: var(--text-main);
+            color: #FFFFFF;
+            border-color: var(--text-main);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sales-sheet {
+                padding: 40px 20px;
+                margin: 0;
+            }
+            .deliverables-grid, .outcome-bonus-container {
+                grid-template-columns: 1fr;
+                flex-direction: column;
+            }
+            .price {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Print Media Query & Page Rules */
+        @page {
+            /* This single line eliminates the browser-injected URLs, dates, and page numbers */
+            margin: 0; 
+        }
+
+        @media print {
+            body {
+                background: #FFFFFF;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .sales-sheet {
+                box-shadow: none;
+                margin: 0;
+                /* Add beautiful print padding so the text doesn't touch the physical paper edge */
+                padding: 40px 60px; 
+                max-width: 100%;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            /* Ensure background graphics and gradients print if supported by browser settings */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            /* Adjust guarantee box for printers that drop dark backgrounds */
+            .guarantee-box {
+                border: 2px solid var(--accent-pink);
+            }
+
+            /* Page Break Control */
+            .deliverable-item, .card, .guarantee-box, .brand-header {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sales-sheet">
+        
+        <header class="brand-header">
+            <h1 class="logo">Daring Creations</h1>
+            <div class="tagline">Wedding Vibe & Memory Architects</div>
+        </header>
+
+        <section class="intro">
+            <p>Managing fifteen different vendors is a recipe for wedding day anxiety. We believe your only job should be celebrating. We've combined elite entertainment and luxury photography into <strong>one contract, one deposit, and one trusted husband-and-wife team.</strong></p>
+        </section>
+
+        <h2 class="package-title">The Zero-Stress Ultimate Wedding Package</h2>
+
+        <section class="deliverables-grid">
+            <div class="deliverable-item" style="border-color: var(--accent-pink);">
+                <h4>Flawless Photography</h4>
+                <p>Full-day, high-end editorial coverage from getting ready to the final send-off. We capture the candid joy and the magazine-worthy portraits.</p>
+            </div>
+            <div class="deliverable-item" style="border-color: var(--accent-purple);">
+                <h4>Elite DJing & Sound</h4>
+                <p>Premium sound equipment and expert mixing tailored to your musical tastes. No cheesy gimmicks, just seamless transitions and high-energy sets.</p>
+            </div>
+            <div class="deliverable-item" style="border-color: var(--accent-orange);">
+                <h4>Venue Walk-through</h4>
+                <p>A comprehensive pre-wedding site visit to map out the perfect acoustic setups and timeline flow.</p>
+            </div>
+        </section>
+
+        <section class="outcome-bonus-container">
+            <div class="card">
+                <div class="card-icon">✧</div>
+                <h3>The Dream Outcome</h3>
+                <p>A packed dance floor, breathtaking photos, and absolute peace of mind. You just show up, look stunning, and celebrate with the people you love.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>The Speed Bonus</h3>
+                <p>Don't wait months to relive your day. You are guaranteed a professionally retouched <strong>10-photo "Sneak Peek" delivered within 48 hours</strong> for immediate social media sharing.</p>
+            </div>
+        </section>
+
+        <section class="guarantee-box">
+            <h3>Our Ironclad Guarantee</h3>
+            <p>"If the dance floor isn't packed and you don't cry looking at your photos, we will refund your DJ fee in full."</p>
+        </section>
+
+        <section class="investment-section">
+            <div class="price">$350,000 JMD</div>
+            <div class="deposit-note">A 50% deposit locks in your date</div>
+            
+            <a href="https://www.instagram.com/daring_creations" target="_blank" rel="noopener noreferrer" class="btn no-print">Book Now</a>
+        </section>
+
+        <footer class="no-print">
+            <button class="print-btn" onclick="window.print()">Download as PDF</button>
+        </footer>
+
+    </div>
+
+</body>
+</html>
