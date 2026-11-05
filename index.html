@@ -43,7 +43,7 @@
         /* Container designed for screen & PDF */
         .sales-sheet {
             width: 100%;
-            max-width: 900px;
+            max-width: 1000px; /* Widened slightly to accommodate deeper copy */
             background: #FFFFFF;
             margin: 40px auto;
             padding: 60px 80px;
@@ -61,7 +61,7 @@
 
         .brand-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             position: relative;
             padding-bottom: 20px;
         }
@@ -96,9 +96,10 @@
         /* Intro Section */
         .intro {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             font-size: 1.1rem;
             color: var(--text-muted);
+            padding: 0 40px;
         }
 
         .intro strong {
@@ -109,44 +110,78 @@
         /* Package Details */
         .package-title {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
             background: var(--gradient-accent);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
+        .package-subtitle {
+            text-align: center;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        /* The 3 Phases Grid */
         .deliverables-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 25px;
             margin-bottom: 40px;
         }
 
         .deliverable-item {
             background: #FAFAFA;
-            padding: 25px;
-            border-left: 4px solid var(--accent-purple);
+            padding: 25px 20px;
+            border-top: 4px solid var(--text-main);
         }
 
         .deliverable-item h4 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
+            font-size: 1rem;
+            margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            color: var(--text-main);
         }
 
-        .deliverable-item p {
-            font-size: 0.95rem;
+        .deliverable-item .phase-sub {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
             color: var(--text-muted);
+            display: block;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .feature-list li strong {
+            color: var(--text-main);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 2px;
         }
 
         /* Dream Outcome & Bonus */
         .outcome-bonus-container {
             display: flex;
-            gap: 30px;
-            margin-bottom: 50px;
+            gap: 25px;
+            margin-bottom: 40px;
         }
 
         .card {
@@ -169,7 +204,7 @@
             position: relative;
             padding: 40px;
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             background: #111111;
             color: #FFFFFF;
         }
@@ -183,7 +218,7 @@
         }
 
         .guarantee-box h3 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             margin-bottom: 15px;
             color: #FFFFFF;
         }
@@ -195,26 +230,34 @@
             line-height: 1.8;
         }
 
-        /* Investment & CTA */
+        /* Investment, Terms & CTA */
         .investment-section {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 20px;
         }
 
         .price {
             font-size: 3rem;
             font-family: 'Cinzel', serif;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .deposit-note {
-            font-size: 1rem;
-            color: var(--text-muted);
+            font-size: 0.9rem;
+            color: var(--text-main);
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             font-weight: 600;
-            margin-bottom: 40px;
+            margin-bottom: 15px;
+        }
+
+        .boundaries-text {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            line-height: 1.6;
         }
 
         .btn {
@@ -240,7 +283,7 @@
         /* Footer */
         footer {
             text-align: center;
-            margin-top: 60px;
+            margin-top: 50px;
             padding-top: 30px;
             border-top: 1px solid #EAEAEA;
         }
@@ -264,23 +307,27 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+        @media (max-width: 850px) {
             .sales-sheet {
                 padding: 40px 20px;
                 margin: 0;
             }
-            .deliverables-grid, .outcome-bonus-container {
+            .deliverables-grid {
                 grid-template-columns: 1fr;
+            }
+            .outcome-bonus-container {
                 flex-direction: column;
             }
             .price {
                 font-size: 2.5rem;
             }
+            .intro {
+                padding: 0 10px;
+            }
         }
 
         /* Print Media Query & Page Rules */
         @page {
-            /* This single line eliminates the browser-injected URLs, dates, and page numbers */
             margin: 0; 
         }
 
@@ -289,12 +336,13 @@
                 background: #FFFFFF;
                 margin: 0;
                 padding: 0;
+                /* Shrink slightly to guarantee a 1-page fit on standard paper */
+                zoom: 0.85; 
             }
             
             .sales-sheet {
                 box-shadow: none;
                 margin: 0;
-                /* Add beautiful print padding so the text doesn't touch the physical paper edge */
                 padding: 40px 60px; 
                 max-width: 100%;
             }
@@ -303,18 +351,15 @@
                 display: none !important;
             }
 
-            /* Ensure background graphics and gradients print if supported by browser settings */
             * {
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
 
-            /* Adjust guarantee box for printers that drop dark backgrounds */
             .guarantee-box {
                 border: 2px solid var(--accent-pink);
             }
 
-            /* Page Break Control */
             .deliverable-item, .card, .guarantee-box, .brand-header {
                 page-break-inside: avoid;
             }
@@ -335,19 +380,41 @@
         </section>
 
         <h2 class="package-title">The Zero-Stress Ultimate Wedding Package</h2>
+        <div class="package-subtitle">One Team. One Contract. Flawless Memories & An Unforgettable Vibe.</div>
 
         <section class="deliverables-grid">
+            <!-- Phase 1 -->
             <div class="deliverable-item" style="border-color: var(--accent-pink);">
-                <h4>Flawless Photography</h4>
-                <p>Full-day, high-end editorial coverage from getting ready to the final send-off. We capture the candid joy and the magazine-worthy portraits.</p>
+                <h4>Phase 1</h4>
+                <span class="phase-sub">Pre-Wedding Coordination</span>
+                <ul class="feature-list">
+                    <li><strong>Vision Consultation</strong> 45-minute Zoom or coffee meeting to map out exact musical tastes, "Do Not Play" lists, and must-have photo groupings.</li>
+                    <li><strong>Venue Walkthrough</strong> We scout the venue to map acoustic dead-zones, equipment placement, and portrait lighting locations.</li>
+                    <li><strong>Timeline Integration</strong> We work directly with your planner to sync music cues and photos so the event flows seamlessly without you checking a watch.</li>
+                </ul>
             </div>
+
+            <!-- Phase 2 -->
             <div class="deliverable-item" style="border-color: var(--accent-purple);">
-                <h4>Elite DJing & Sound</h4>
-                <p>Premium sound equipment and expert mixing tailored to your musical tastes. No cheesy gimmicks, just seamless transitions and high-energy sets.</p>
+                <h4>Phase 2</h4>
+                <span class="phase-sub">Sound & Entertainment</span>
+                <ul class="feature-list">
+                    <li><strong>8 Hours DJ Coverage</strong> Continuous music curation from guest arrival and cocktail hour, right through to the final reception dance.</li>
+                    <li><strong>Premium Audio System</strong> Crystal-clear sound engineered for speeches, plus deep bass for a packed dance floor.</li>
+                    <li><strong>Wireless Mic System</strong> Dedicated high-end mics for the officiant and toasts so every word is heard flawlessly.</li>
+                </ul>
             </div>
+
+            <!-- Phase 3 -->
             <div class="deliverable-item" style="border-color: var(--accent-orange);">
-                <h4>Venue Walk-through</h4>
-                <p>A comprehensive pre-wedding site visit to map out the perfect acoustic setups and timeline flow.</p>
+                <h4>Phase 3</h4>
+                <span class="phase-sub">Premium Photography</span>
+                <ul class="feature-list">
+                    <li><strong>8 Hours Continuous Shooting</strong> Comprehensive coverage from the "Getting Ready" details to the grand exit.</li>
+                    <li><strong>Dual Execution Team</strong> While the lead shoots portraits, our second coordinator manages audio logistics—zero missed moments.</li>
+                    <li><strong>Complete Digital Gallery</strong> 400+ professionally color-graded and retouched images delivered in 4-6 weeks.</li>
+                    <li><strong>Full Print Rights</strong> You own your memories. No watermarks and absolutely no hidden fees to download.</li>
+                </ul>
             </div>
         </section>
 
@@ -359,8 +426,8 @@
             </div>
             <div class="card">
                 <div class="card-icon">⚡</div>
-                <h3>The Speed Bonus</h3>
-                <p>Don't wait months to relive your day. You are guaranteed a professionally retouched <strong>10-photo "Sneak Peek" delivered within 48 hours</strong> for immediate social media sharing.</p>
+                <h3>The 48-Hour Speed Bonus</h3>
+                <p>Don't wait months to relive your day. You are guaranteed <strong>10 fully edited, high-resolution photos delivered to your phone within 48 hours</strong> to announce your marriage immediately.</p>
             </div>
         </section>
 
@@ -371,8 +438,12 @@
 
         <section class="investment-section">
             <div class="price">$350,000 JMD</div>
-            <div class="deposit-note">A 50% deposit locks in your date</div>
+            <div class="deposit-note">A 25% non-refundable retainer ($87,500 JMD) locks your date. <br>The remaining balance is split into 3 monthly payments.</div>
             
+            <div class="boundaries-text">
+                <strong>The Boundaries:</strong> Travel within Kingston & St. Andrew is fully covered (weddings outside this parish incur a standard mileage/accommodation fee quoted prior). If the party is going crazy, overtime is available at $35,000 JMD per additional hour. Final balance due 30 days prior.
+            </div>
+
             <a href="https://www.instagram.com/daring_creations" target="_blank" rel="noopener noreferrer" class="btn no-print">Book Now</a>
         </section>
 
